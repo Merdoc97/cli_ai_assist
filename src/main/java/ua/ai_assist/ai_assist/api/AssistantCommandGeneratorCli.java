@@ -36,9 +36,9 @@ public class AssistantCommandGeneratorCli implements Runnable {
                 .template(promt)
                 .build();
 
-        var response = chatModel.call(
-                template.render(Map.of("description", command))
-        );
-        System.out.println(response);
+        chatModel.stream(
+                        template.render(Map.of("description", command)))
+                .doOnNext(System.out::print)
+                .then().block();
     }
 }

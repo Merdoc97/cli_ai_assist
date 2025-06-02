@@ -4,8 +4,7 @@ spring:
     name: ai_assist
   ai:
     openai:
-#      put your api key
-      api-key:
+      api-key: 
       chat:
         options:
           stream-usage: true

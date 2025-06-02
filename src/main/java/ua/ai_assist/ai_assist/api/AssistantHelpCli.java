@@ -32,10 +32,9 @@ public class AssistantHelpCli implements Runnable {
                         .build())
                 .template(promt)
                 .build();
-
-        var response = chatModel.call(
-                template.render(Map.of("command", command))
-        );
-        System.out.println(response);
+        chatModel.stream(
+                        template.render(Map.of("command", command)))
+                .doOnNext(System.out::print)
+                .then().block();
     }
 }
