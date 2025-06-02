@@ -1,0 +1,25 @@
+
+spring:
+  application:
+    name: ai_assist
+  ai:
+    openai:
+#      put your api key
+      api-key:
+      chat:
+        options:
+          stream-usage: true
+          model: gpt-4o-mini
+          max-tokens: 500
+          temperature: 0.1
+  output:
+    ansi:
+      enabled: always
+  main:
+    banner-mode: off
+logging:
+
+  level:
+    u.a.ai_assist.*: trace
+    root: error
+
