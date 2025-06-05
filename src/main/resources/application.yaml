@@ -4,7 +4,6 @@ spring:
     name: ai_assist
   ai:
     openai:
-      api-key: 
       chat:
         options:
           stream-usage: true
@@ -20,5 +19,6 @@ logging:
 
   level:
     u.a.ai_assist.*: trace
-    root: error
+    root: warn
+    org.springframework.ai: DEBUG
 

@@ -16,8 +16,9 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class AssistantHelpCli implements Runnable {
     private final String promt = """
-            Please give me a complete help to <command> command, response should be as in console.
-            response contains examples of usage.
+            Please give me a complete help to <command> command,
+            Response should be as in console format.
+            Response should contains example.
             """;
     private final ChatModel chatModel;
     @CommandLine.Option(names = {"-c", "--command"}, required = true, description = "command to help")
